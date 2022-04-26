@@ -66,6 +66,10 @@ public:
 			before->next = after->next;
 			after->next = NULL;
 		}
+		else
+		{
+			std::cout << "There is no node with the value " << n << "." << "\n";
+		}
 		length--;
 	}
 	
@@ -84,6 +88,7 @@ int main() {
 	my_list.insert(60);
 	my_list.insert(12);
 	my_list.remove(60);
+	my_list.remove(3);
 	my_list.printList();
 	return 0;
 
