@@ -72,6 +72,20 @@ public:
 		}
 		length--;
 	}
+	void reverseList()
+	{
+		Node* before = NULL;
+		Node* after = NULL;
+		temp = head;
+		while (temp)
+		{
+			after = temp->next;
+			temp->next = before;
+			before = temp;
+			temp = after;
+		}
+		head = before;
+	}
 	
 
 };
@@ -87,8 +101,7 @@ int main() {
 	my_list.insert(500);
 	my_list.insert(60);
 	my_list.insert(12);
-	my_list.remove(60);
-	my_list.remove(3);
+	my_list.reverseList();
 	my_list.printList();
 	return 0;
 
