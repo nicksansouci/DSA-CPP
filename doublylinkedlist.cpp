@@ -117,9 +117,13 @@ public:
 			delete temp;
 			length--;
 		}
-		else
+		if (after->data == n && after->next == NULL)
 		{
 			pop_back();
+		}
+		else
+		{
+			std::cout << "There are no nodes with the value " << n << "." << "\n";
 		}
 		return 0;
 	}
@@ -134,8 +138,8 @@ int main()
 	my_list.insert(5);
 	my_list.insert(6);
 	my_list.printList();
-	my_list.pop_front();
-	my_list.remove(5);
+	my_list.pop_back();
+	my_list.remove(6);
 	my_list.printList();
 	
 	
