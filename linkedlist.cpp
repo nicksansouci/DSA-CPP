@@ -13,12 +13,7 @@ public:
 	Node* temp;
 	Node* head;
 	Node* tail;
-	LinkedList(){
-		length = 0;
-		temp = nullptr;
-		head = nullptr;
-		tail = nullptr;
-	};
+	LinkedList() :length{ 0 }, temp{nullptr}, head{nullptr}, tail{nullptr}{}
 
 	void printList() {
 		temp = head;
