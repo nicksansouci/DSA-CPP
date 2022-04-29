@@ -16,14 +16,14 @@ public:
 	Node* tail;
 	DoublyLinkedList() {
 		length = 0;
-		temp = NULL;
-		head = NULL;
-		tail = NULL;
+		temp = nullptr;
+		head = nullptr;
+		tail = nullptr;
 	}
 
 	void printList() {
 		temp = head;
-		while (temp != NULL) {
+		while (temp != nullptr) {
 			std::cout << temp->data << "\n";
 			temp = temp->next;
 		}
@@ -33,9 +33,9 @@ public:
 	int insert(int n) {
 		temp = new Node;
 		temp->data = n;
-		temp->next = NULL;
-		temp->prev = NULL;
-		if (head == NULL)
+		temp->next = nullptr;
+		temp->prev = nullptr;
+		if (head == nullptr)
 		{
 			head = temp;
 			tail = temp;
@@ -59,11 +59,11 @@ public:
 		else
 		{
 			Node* prev = tail->prev;
-			if (prev != NULL)
+			if (prev != nullptr)
 			{
-				prev->next = NULL;
+				prev->next = nullptr;
 			}
-			tail->prev = NULL;
+			tail->prev = nullptr;
 			delete tail;
 			tail = prev;
 			length--;
@@ -79,7 +79,7 @@ public:
 		else {
 			Node* before = head;
 			head = head->next;
-			before->next = NULL;
+			before->next = nullptr;
 			delete before;
 			length--;
 		}
@@ -87,9 +87,9 @@ public:
 	}
 	int remove(int n)
 	{
-		Node* before = NULL;
-		Node* after = NULL;
-		if (head == NULL)
+		Node* before = nullptr;
+		Node* after = nullptr;
+		if (head == nullptr)
 		{
 			std::cout << "There are no nodes to delete." << "\n";
 			return 0;
@@ -105,19 +105,19 @@ public:
 			after = after->next;
 			temp = temp->next;
 		}
-		if (after->data == n && after->next != NULL)
+		if (after->data == n && after->next != nullptr)
 		{
 			after = after->next;
 			temp = temp->next;
 			before = temp->prev;
-			temp->next = NULL;
-			temp->prev = NULL;
+			temp->next = nullptr;
+			temp->prev = nullptr;
 			after->prev = before;
 			before->next = after;
 			delete temp;
 			length--;
 		}
-		if (after->data == n && after->next == NULL)
+		if (after->data == n && after->next == nullptr)
 		{
 			pop_back();
 		}
@@ -139,7 +139,7 @@ int main()
 	my_list.insert(6);
 	my_list.printList();
 	my_list.pop_back();
-	my_list.remove(6);
+	my_list.remove(2);
 	my_list.printList();
 	
 	
