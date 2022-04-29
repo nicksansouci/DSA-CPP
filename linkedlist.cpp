@@ -15,14 +15,14 @@ public:
 	Node* tail;
 	LinkedList(){
 		length = 0;
-		temp = NULL;
-		head = NULL;
-		tail = NULL;
+		temp = nullptr;
+		head = nullptr;
+		tail = nullptr;
 	};
 
 	void printList() {
 		temp = head;
-		while (temp != NULL){
+		while (temp != nullptr){
 			std::cout<< temp->data << "\n";
 			temp = temp->next;
 		}
@@ -32,8 +32,8 @@ public:
 	{
 		temp = new Node;
 		temp->data = n;
-		temp->next = NULL;
-		if (head == NULL)
+		temp->next = nullptr;
+		if (head == nullptr)
 		{
 			head = temp;
 			tail = temp;
@@ -47,24 +47,24 @@ public:
 	}
 	int remove(int n)
 	{
-		Node* before = NULL;
-		Node* after = NULL;
-		if (head == NULL)
+		Node* before = nullptr;
+		Node* after = nullptr;
+		if (head == nullptr)
 		{
 			std::cout << "No nodes to delete." << "\n";
 			return 0;
 		}
 		after = head->next;
 		//Implemented these if statements to make sure after->next & 
-		//before->next are not NULL so I'm not dereferencing a NULL ptr.
-		if (after->next != NULL && after->data != n)
+		//before->next are not nullptr so I'm not dereferencing a nullptr ptr.
+		if (after->next != nullptr && after->data != n)
 		{
 			before = after;
 			after = after->next;
 		}
-		if (before->next != NULL && after->data == n) {
+		if (before->next != nullptr && after->data == n) {
 			before->next = after->next;
-			after->next = NULL;
+			after->next = nullptr;
 		}
 		else
 		{
@@ -74,8 +74,8 @@ public:
 	}
 	void reverseList()
 	{
-		Node* before = NULL;
-		Node* after = NULL;
+		Node* before = nullptr;
+		Node* after = nullptr;
 		temp = head;
 		while (temp)
 		{
