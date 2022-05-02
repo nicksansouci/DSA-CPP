@@ -15,6 +15,17 @@ public:
 	Node* tail;
 	LinkedList() :length{0}, temp{nullptr}, head{nullptr}, tail{nullptr}{}
 
+	~LinkedList() {
+		temp = head;
+		while (temp)
+		{
+			Node* next = temp->next;
+			delete temp;
+			temp = next;
+		}
+		head = nullptr;
+	}
+
 	void printList() {
 		temp = head;
 		while (temp != nullptr){
