@@ -24,7 +24,7 @@ public:
 			front = std::move(front->next);
 		}
 		std::cout << "\n";
-		std::cout << "Destroyed queue" << std::endl;
+		std::cout << "Destructed Queue" << std::endl;
 	}
 	//Push an item to the back of the queue.
 	void push(int data)
