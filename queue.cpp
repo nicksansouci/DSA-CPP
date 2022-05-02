@@ -23,20 +23,22 @@ public:
 		{
 			front = std::move(front->next);
 		}
+		std::cout << "\n";
+		std::cout << "Destroyed queue" << std::endl;
 	}
 	//Push an item to the back of the queue.
 	void push(int data)
 	{
 		if (length == 0)
 		{
-			front = std::shared_ptr<Node>(new Node);
+			front = std::make_shared<Node>();
 			front->data = data;
 			back = front;
 		}
 		else
 		{
 			temp = back;
-			back = std::shared_ptr<Node>(new Node);
+			back = std::make_shared<Node>();
 			back->data = data;
 			temp->next = back;
 		}
