@@ -55,7 +55,6 @@ public:
 		{
 			temp = front;
 			temp = std::move(temp->next);
-			front->next = nullptr;
 			front = temp;
 		}
 	}
@@ -64,7 +63,7 @@ public:
 		while (temp)
 		{
 			std::cout << temp->data << " ";
-			temp = std::move(temp->next);
+			temp = temp->next;
 		}
 	}
 };
@@ -82,4 +81,5 @@ int main()
 	q1.push(8);
 	q1.pop();
 	q1.print_queue();
+
 }
