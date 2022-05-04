@@ -27,7 +27,7 @@ public:
 		std::cout << "Destructed Queue" << std::endl;
 	}
 	//Push an item to the back of the queue.
-	void push(int data)
+	void enqueue(int data)
 	{
 		if (length == 0)
 		{
@@ -45,7 +45,7 @@ public:
 		length++;
 	}
 	//Pop item in the front of the queue.
-	void pop()
+	void dequeue()
 	{
 		if (length == 0) {
 			std::cout << "There are no items to pop from the queue.";
@@ -76,10 +76,10 @@ public:
 int main()
 {
 	Queue q1;
-	q1.push(6);
-	q1.push(10);
-	q1.push(8);
-	q1.pop();
+	q1.enqueue(6);
+	q1.enqueue(10);
+	q1.enqueue(8);
+	q1.dequeue();
+	q1.dequeue();
 	q1.print_queue();
-
 }
