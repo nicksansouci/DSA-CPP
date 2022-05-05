@@ -30,6 +30,8 @@ public:
 		temp = head;
 		while (temp != nullptr){
 			std::cout<< temp->data << "->" << " ";
+			if (temp->next == NULL)
+				std::cout << "NULL";
 			temp = temp->next;
 		}
 		std::cout << "\n";
