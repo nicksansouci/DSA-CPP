@@ -36,6 +36,7 @@ public:
 	}
 	void insert(int n) 
 	{
+		// Initializing many "nullptr" to make the code easier to follow/understand.
 		temp = new Node;
 		temp->data = n;
 		temp->next = nullptr;
