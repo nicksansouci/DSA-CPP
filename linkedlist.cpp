@@ -29,9 +29,10 @@ public:
 	void printList() {
 		temp = head;
 		while (temp != nullptr){
-			std::cout<< temp->data << "\n";
+			std::cout<< temp->data << "->" << " ";
 			temp = temp->next;
 		}
+		std::cout << "\n";
 		std::cout << "The length of the list is " << length << "\n";
 	}
 	void insert(int n) 
@@ -40,7 +41,7 @@ public:
 		temp = new Node;
 		temp->data = n;
 		temp->next = nullptr;
-		if (head == nullptr)
+		if (length == 0)
 		{
 			head = temp;
 			tail = temp;
@@ -56,7 +57,7 @@ public:
 	{
 		Node* before = nullptr;
 		Node* after = nullptr;
-		if (head == nullptr)
+		if (length == 0)
 		{
 			std::cout << "No nodes to delete." << "\n";
 			return 0;
