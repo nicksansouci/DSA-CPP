@@ -72,9 +72,10 @@ public:
 			before = after;
 			after = after->next;
 		}
-		if (before->next != nullptr && after->data == n) {
+		if (after->data == n) {
 			before->next = after->next;
 			after->next = nullptr;
+			delete after;
 		}
 		else
 		{
@@ -111,7 +112,6 @@ int main() {
 	my_list.insert(500);
 	my_list.insert(60);
 	my_list.insert(12);
-	my_list.reverseList();
 	my_list.printList();
 	return 0;
 
