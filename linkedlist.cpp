@@ -25,6 +25,43 @@ public:
 		}
 		head = nullptr;
 	}
+	int pop_front()
+	{
+		if (length == 0)
+		{
+			std::cout << "There are no nodes to pop." << "\n";
+			return 0;
+		}
+		else {
+			Node* before = head;
+			head = head->next;
+			before->next = nullptr;
+			delete before;
+			length--;
+		}
+		return 0;
+	}
+	int pop_back()
+	{
+		if (length == 0)
+		{
+			std::cout << "There are no nodes to pop." << std::endl;
+			return 0;
+		}
+		else
+		{
+			Node* prev = head;
+			while (prev->next != tail)
+			{
+				prev = prev->next;
+			}
+			prev->next = nullptr;
+			delete tail;
+			tail = prev;
+			length--;
+		}
+		return 0;
+	}
 
 	void printList() {
 		temp = head;
@@ -34,7 +71,7 @@ public:
 				std::cout << "NULL";
 			temp = temp->next;
 		}
-		std::cout << "\n";
+		std::cout <<"\n";
 		std::cout << "The length of the list is " << length << "\n";
 	}
 	void insert(int n) 
@@ -43,7 +80,7 @@ public:
 		temp = new Node;
 		temp->data = n;
 		temp->next = nullptr;
-		if (length == 0)
+		if (head == nullptr)
 		{
 			head = temp;
 			tail = temp;
@@ -57,31 +94,30 @@ public:
 	}
 	int remove(int n)
 	{
-		Node* before = nullptr;
-		Node* after = nullptr;
-		if (length == 0)
+		if (n == head->data)
 		{
-			std::cout << "No nodes to delete." << "\n";
-			return 0;
+			pop_front();
 		}
-		after = head->next;
-		//Implemented these if statements to make sure after->next & 
-		//before->next are not nullptr so I'm not dereferencing a nullptr ptr.
-		if (after->next != nullptr && after->data != n)
+		if (n == tail->data)
 		{
-			before = after;
-			after = after->next;
+			pop_back();
 		}
-		if (after->data == n) {
-			before->next = after->next;
-			after->next = nullptr;
+		else {
+			Node* temp = head;
+			Node* after = temp;
+			while (temp->next->data != n)
+			{
+				temp = temp->next;
+				after = temp;
+			}
+			after = temp->next;
+			temp->next = temp->next->next;
+			after->next = NULL;
 			delete after;
+			length--;
 		}
-		else
-		{
-			std::cout << "There is no node with the value " << n << "." << "\n";
-		}
-		length--;
+		return 0;
+	
 	}
 	void reverseList()
 	{
@@ -112,6 +148,9 @@ int main() {
 	my_list.insert(500);
 	my_list.insert(60);
 	my_list.insert(12);
+	my_list.insert(9);
+	my_list.printList();
+	my_list.remove(9);
 	my_list.printList();
 	return 0;
 
