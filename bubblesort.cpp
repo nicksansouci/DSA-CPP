@@ -29,14 +29,14 @@ int main()
 {
 	vector<int> v2{ 5, 6, 8,1, 3, 9, 10, 12, 2 };
 	BubbleSort(v2);
-	for (auto& x : v2)
+	for (const auto& x : v2)
 	{
 		cout << x << endl;
 	}
 
 	vector<double> v3 { 10.5, 9.1, 2.3 , 1.4, 7.8, 6.0, 8.5, 3.3, 5.5, 3.5};
 	BubbleSort(v3);
-	for (auto& x : v3)
+	for (const auto& x : v3)
 	{
 		cout << x << " ";
 	}
