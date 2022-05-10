@@ -25,7 +25,7 @@ T BubbleSort(T& v1)
 }
 
 template <typename T>
-void print(T& v1)
+void print(T v1)
 {
 	for (const auto& x : v1)
 	{
