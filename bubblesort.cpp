@@ -24,20 +24,24 @@ T BubbleSort(T& v1)
 	return v1;
 }
 
+template <typename T>
+void print(T& v1)
+{
+	for (const auto& x : v1)
+	{
+		cout << x << " ";
+	}
+	cout << "\n";
+}
+
 
 int main()
 {
 	vector<int> v2{ 5, 6, 8,1, 3, 9, 10, 12, 2 };
 	BubbleSort(v2);
-	for (const auto& x : v2)
-	{
-		cout << x << endl;
-	}
+	print(v2);
 
 	vector<double> v3 { 10.5, 9.1, 2.3 , 1.4, 7.8, 6.0, 8.5, 3.3, 5.5, 3.5};
 	BubbleSort(v3);
-	for (const auto& x : v3)
-	{
-		cout << x << " ";
-	}
+	print(v3);
 }
