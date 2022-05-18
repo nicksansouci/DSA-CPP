@@ -41,6 +41,7 @@ vector<int> merge(vector<int> left, vector<int> right)
 		result.emplace_back(right[j]);
 		j += 1;
 	}
+
 	return result;
 }
 
