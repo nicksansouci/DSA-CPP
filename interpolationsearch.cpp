@@ -3,7 +3,7 @@
 
 using namespace std;
 
-//Non recursive approach
+// Non recursive approach
 int interpolation_sort(vector<int>& v, int target)
 {
 	int left = 0;
@@ -29,7 +29,7 @@ int interpolation_sort(vector<int>& v, int target)
 	}
 	cout << "There is no value in the vector equal to " << target << "\n";
 	return -1;
-}
+} 
 
 // Recursive Approach
 
@@ -58,4 +58,5 @@ int main()
 {
 	vector <int> v1{ 3, 8, 11, 15, 16, 23, 28, 30, 32, 39, 42, 44, 47, 48, 50 };
 	interpolation_recursive(v1, 0, v1.size()-1, 16);
+	interpolation_sort(v1, 30);
 }
