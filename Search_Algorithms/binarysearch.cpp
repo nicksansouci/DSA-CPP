@@ -1,5 +1,6 @@
 #include <vector>
 #include <iostream>
+#include <chrono>
 
 using namespace std;
 
@@ -56,10 +57,11 @@ int binary_recursive(vector<int> v, int left, int right, int target)
 
 int main()
 {
-	vector <int> v1{ -1,0,3,5,9,12 };
-	binary_search(v1, 5);
-	binary_recursive(v1, 0, v1.size()-1, 3);
-	return 0;
+	vector <int> v1{ 3, 8, 11, 15, 16, 23, 28, 30, 32, 39, 42, 44, 47, 48, 50 };
+	auto t0 = chrono::high_resolution_clock::now();
+	binary_recursive(v1, 0, v1.size()-1, 23);
+	auto t1 = chrono::high_resolution_clock::now();
+	cout << "Completed search in " << chrono::duration_cast<chrono::microseconds>(t1 - t0).count() << " microseconds\n";
 
 
 
