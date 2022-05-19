@@ -1,6 +1,7 @@
 #include <cmath>
 #include <iostream>
 #include <vector>
+#include <chrono>
 using namespace std;
 
 int jump_search(vector<int>& v, int target)
@@ -40,5 +41,8 @@ int jump_search(vector<int>& v, int target)
 int main()
 {
 	vector <int> v1{ 3, 8, 11, 15, 16, 23, 28, 30, 32, 39, 42, 44, 47, 48, 50 };
-	jump_search(v1, 15);
+	auto t0 = chrono::high_resolution_clock::now();
+	jump_search(v1, 11);
+	auto t1 = chrono::high_resolution_clock::now();
+	cout << "Completed search in " << chrono::duration_cast<chrono::microseconds>(t1 - t0).count() << " microseconds\n";
 }
