@@ -1,5 +1,5 @@
 # DSA-CPP
-C++ Data Structures and Algorithms repository to practice pointers, algorithm design, and C++ mechanics.
+C++ Data Structures and Algorithms repository to practice data structures, dynamic programming/recursion, algorithm design, and C++ mechanics.
 
 This repository is for me to implement my data structures and algorithms knowledge utilizing C++.
 
